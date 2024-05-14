@@ -1,0 +1,165 @@
+{
+  "answers": [
+    {
+      "answer": "Sí, absolutamente.",
+      "type": "afirmativa"
+    },
+    {
+      "answer": "Es indudable.",
+        "type": "afirmativa"
+      },
+      {
+        "answer": "Por supuesto.",
+        "type": "afirmativa"
+      },
+      {
+        "answer": "Definitivamente sí.",
+        "type": "afirmativa"
+      },
+      {
+        "answer": "¡Claro que sí!",
+        "type": "afirmativa"
+      },
+      {
+        "answer": "Totalmente seguro.",
+        "type": "afirmativa"
+      },
+      {
+        "answer": "¡Sin lugar a dudas!",
+        "type": "afirmativa"
+      },
+      {
+        "answer": "Indiscutiblemente sí.",
+        "type": "afirmativa"
+      },
+      {
+        "answer": "Así es.",
+        "type": "afirmativa"
+      },
+      {
+        "answer": "Puedes contar con ello.",
+        "type": "afirmativa"
+      },
+      {
+        "answer": "No puedo decirlo ahora.",
+        "type": "neutral"
+      },
+      {
+        "answer": "No es el momento adecuado.",
+        "type": "neutral"
+      },
+      {
+        "answer": "Respuesta incierta, inténtalo de nuevo.",
+        "type": "neutral"
+      },
+      {
+        "answer": "La respuesta está en proceso.",
+        "type": "neutral"
+      },
+      {
+        "answer": "Concentra tus energías y pregunta otra vez.",
+        "type": "neutral"
+      },
+      {
+        "answer": "Los signos no son claros en este momento.",
+        "type": "neutral"
+      },
+      {
+        "answer": "Respuesta desconocida en este momento.",
+        "type": "neutral"
+      },
+      {
+        "answer": "Consulta de nuevo más tarde.",
+        "type": "neutral"
+      },
+      {
+        "answer": "Estoy en modo espera, vuelve a preguntar.",
+        "type": "neutral"
+      },
+      {
+        "answer": "Requiere más reflexión, pregunta de nuevo más tarde.",
+        "type": "neutral"
+      },
+      {
+        "answer": "No, en absoluto.",
+        "type": "negativa"
+      },
+      {
+        "answer": "Mis indicadores dicen que no.",
+        "type": "negativa"
+      },
+      {
+        "answer": "No cuentes con ello en este momento.",
+        "type": "negativa"
+      },
+      {
+        "answer": "La respuesta es negativa.",
+        "type": "negativa"
+      },
+      {
+        "answer": "Lo siento, no veo que ocurra.",
+        "type": "negativa"
+      },
+      {
+        "answer": "No hay posibilidad.",
+        "type": "negativa"
+      },
+      {
+        "answer": "Mi respuesta es no.",
+        "type": "negativa"
+      },
+      {
+        "answer": "Las probabilidades están en contra.",
+        "type": "negativa"
+      },
+      {
+        "answer": "Es poco probable.",
+        "type": "negativa"
+      },
+      {
+        "answer": "Mis fuentes indican que no.",
+        "type": "negativa"
+      },
+      {
+        "answer": "¡Solo si bailas la danza de la lluvia primero!",
+        "type": "humorística"
+      },
+      {
+        "answer": "Tal vez en una realidad alternativa.",
+        "type": "humorística"
+      },
+      {
+        "answer": "Consulta a tu gato mágico y vuelve a preguntar.",
+        "type": "humorística"
+      },
+      {
+        "answer": "¡Solo si llevas calcetines a juego mañana!",
+        "type": "humorística"
+      },
+      {
+        "answer": "Sí, pero solo si compartes tu helado conmigo.",
+        "type": "humorística"
+      },
+      {
+        "answer": "Solo si escuchas la canción 'Eye of the Tiger' tres veces seguidas.",
+        "type": "humorística"
+      },
+      {
+        "answer": "¡Claro, cuando los pingüinos vuelen!",
+        "type": "humorística"
+      },
+      {
+        "answer": "¡Solo si haces un deseo a una estrella fugaz primero!",
+        "type": "humorística"
+      },
+      {
+        "answer": "Sí, pero solo en tus sueños más locos.",
+        "type": "humorística"
+      },
+      {
+        "answer": "¡Solo si dices 'por favor' al revés tres veces!",
+        "type": "humorística"
+      }
+    ]
+  }
+  
