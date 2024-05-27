@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'widget_answer.dart';
 import 'dart:convert';
 
 class MyHome extends StatefulWidget {
@@ -20,10 +22,14 @@ class _MyHomeState extends State<MyHome> {
   // Índice del elemento seleccionado
   int selectedItem = 0;
 
+  // Respuesta
+  String answer = '';
+
   @override
   void initState() {
     // Para asegurar que los elementos de la lista se carguen al iniciar la aplicación
     super.initState();
+    // Carga las respuestas  al comenzar la aplicación
     cargarElementos();
   }
 
@@ -34,8 +40,7 @@ class _MyHomeState extends State<MyHome> {
       final String respuesta = await rootBundle.loadString('data/answers.json');
       final data = json.decode(respuesta);
       setState(() {
-        // ignore: avoid_print
-        //print(fin);
+        // Carga las respuesyas en una variable
         _items = data["answers"];
       });
     }
@@ -47,6 +52,30 @@ class _MyHomeState extends State<MyHome> {
       });
     }
   }
+
+
+  void seeAnswer(int selectedIndex){    
+    // Método para cargar la pantalla que muestra el destino seleccionado
+    String selectedAnswer = getAnswer();
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => WidgetAnswer(
+            answer: selectedAnswer
+          ),
+        fullscreenDialog: true,
+      ),
+    );      
+  }
+
+  String getAnswer () {
+    /*
+    Obtiene una respuesta random
+    */    
+    String randomAnswer = _items[Random().nextInt(_items.length)]["answer"];    
+    return randomAnswer;    
+  }
+
 
   @override
   Widget build(BuildContext context) {
