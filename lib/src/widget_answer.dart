@@ -7,10 +7,10 @@ en la pantalla de ListView.
 
 class WidgetAnswer extends StatefulWidget {
   const WidgetAnswer({
-    Key? key,
+    super.key,
     required this.answer
     
-  }) : super(key: key);
+  });
 
   final String answer; 
 
@@ -24,13 +24,22 @@ class _WidgetAnswer extends State<WidgetAnswer> {
     return Scaffold(      
       
       body: Container(
+        alignment: Alignment.center,
         decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/background1.png'),
               fit: BoxFit.fill
             )
         ),
-        child: Text(widget.answer)
+        child: Center(
+          child: Text(
+            textAlign: TextAlign.center,
+            widget.answer,
+            style: const TextStyle(
+              fontSize: 20
+            ),
+          ),
+        )
         
       )
       ,

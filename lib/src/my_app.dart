@@ -8,12 +8,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Bola 8 EMT',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        fontFamily: 'Manrope',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.dark),
         useMaterial3: true,
       ),
-      home: const MyHome(title: 'Flutter Demo Home Page'),
+      themeMode: ThemeMode.dark,
+      home: const MyHome(
+        title: 'Bola 8 BCF5',        
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math';
+import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'widget_answer.dart';
@@ -15,6 +16,13 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
+
+  // Variables para animaciones
+  int _size = 150;
+  int _opacity = 100;
+
+  
+  
 
   // Lista para guardar los elementos que vienen en el archivo JSON
   List _items = [];
@@ -54,7 +62,9 @@ class _MyHomeState extends State<MyHome> {
   }
 
 
-  void seeAnswer(int selectedIndex){    
+  void seeAnswer(){
+    // Ejecutar animacion
+    animateTransition();
     // Método para cargar la pantalla que muestra el destino seleccionado
     String selectedAnswer = getAnswer();
     Navigator.push(
@@ -76,23 +86,95 @@ class _MyHomeState extends State<MyHome> {
     return randomAnswer;    
   }
 
+  // Controlar animación
+  void animateTransition() {
+    // Modificar tamano
+    setState(() {
+       _size = 300;
+    });
+    // Modificar opacidad
+    setState(() {
+      _opacity = 0;
+    });
+   
+  }
+  
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(          
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              _items[4]["answer"]
-            ),            
-          ],
-        ),
+      
+      body: Stack(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/background1.png'),
+                  fit: BoxFit.fill
+                )
+            ),
+            child: const Center(
+              child: Column(          
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: TextField(
+                      keyboardType: TextInputType.multiline,
+                      maxLength: 100,
+                      minLines: 1,
+                      maxLines: null,
+                    ),) ,
+                  /*ElevatedButton(
+                    onPressed: seeAnswer,
+                    child: const Text('Dime que piensas...')
+                  )*/
+                ],
+              ),
+            ),
+          ),
+        
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: GestureDetector(
+                onTap: seeAnswer,
+                child: AnimatedOpacity(
+                  duration: Duration(milliseconds: 500),
+                  opacity: _opacity,
+                  child: AnimatedContainer(
+                    width: _size,
+                    height: _size,
+                    duration: const Duration(milliseconds: 500),                  
+                    decoration: const BoxDecoration(
+                      color: Colors.blue,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.arrow_drop_up, size: 60,),
+                          Text(
+                            '8',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 60,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ]
       ),
        // This trailing comma makes auto-formatting nicer for build methods.
     );
