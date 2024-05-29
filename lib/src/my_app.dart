@@ -8,11 +8,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Bola 8 EMT',
       theme: ThemeData(
         fontFamily: 'Manrope',
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
+          seedColor: Colors.blue,
           brightness: Brightness.dark),
         useMaterial3: true,
       ),

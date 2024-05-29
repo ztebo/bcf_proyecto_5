@@ -1,3 +1,4 @@
+import 'package:bcf_proyecto_5/src/my_home.dart';
 import 'package:flutter/material.dart';
 
 /*
@@ -26,25 +27,41 @@ class _WidgetAnswer extends State<WidgetAnswer> {
       body: Container(
         alignment: Alignment.center,
         decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/background1.png'),
-              fit: BoxFit.fill
-            )
+            gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromARGB(255, 1, 10, 20), // Cambia a tu color de inicio
+                    Color.fromARGB(255, 1, 10, 20), // Color de centro
+                    Color.fromARGB(255, 1, 10, 20), // Cambia a tu color de fin
+                  ],
+            ),
         ),
         child: Center(
           child: Text(
-            textAlign: TextAlign.center,
-            widget.answer,
-            style: const TextStyle(
-              fontSize: 20
-            ),
-          ),
+  widget.answer,
+  textAlign: TextAlign.center,
+  style: const TextStyle(
+    shadows: [
+      Shadow(
+        blurRadius: 50,
+        color: Colors.white,
+        offset: Offset(0.0, 0.0),
+      ),
+    ],
+    fontSize: 20,
+  ),
+),
         )
         
       )
       ,
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context).pop(),
+        onPressed: () => {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const MyHome(title: 'Bola 8 BCF5')))
+        },
         child: const Icon(Icons.arrow_back_sharp),
       ),
       
