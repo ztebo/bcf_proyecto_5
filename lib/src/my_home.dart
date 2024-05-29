@@ -28,6 +28,8 @@ class _MyHomeState extends State<MyHome> {
   // Respuesta
   String answer = '';
 
+
+
   @override
   void initState() {
     // Para asegurar que los elementos de la lista se carguen al iniciar la aplicación
