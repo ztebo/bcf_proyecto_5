@@ -28,6 +28,11 @@ class _MyHomeState extends State<MyHome> {
   // Respuesta
   String answer = '';
 
+  // Controller para el textfield
+  final TextEditingController _textFieldController = TextEditingController();
+
+  
+
 
 
   @override
@@ -68,11 +73,13 @@ class _MyHomeState extends State<MyHome> {
       context,
       MaterialPageRoute(
         builder: (_) => WidgetAnswer(
+            question: _textFieldController.value.text,
             answer: selectedAnswer
           ),
         fullscreenDialog: true,
       ),
     );
+    _animate = false;
   }  
 
   // Controlar animación al inicio para asegurar que no se reproduce la animación por defecto
@@ -81,6 +88,7 @@ class _MyHomeState extends State<MyHome> {
     setState(() {
        _animate = false;
     });
+    
   }
 
   @override
@@ -101,13 +109,14 @@ class _MyHomeState extends State<MyHome> {
                   ],
                 ),
             ),
-            child: const Center(
+            child: Center(
               child: Column(          
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     child: TextField(
+                      controller: _textFieldController,
                       keyboardType: TextInputType.multiline,
                       maxLength: 100,
                       minLines: 1,
@@ -129,7 +138,7 @@ class _MyHomeState extends State<MyHome> {
               child: GestureDetector(
                 onTap: () {                  
                   setState(() {
-                    _animate=true;
+                    _animate=_textFieldController.value.text != '';
                   }); 
                 },
                 // Animación de Opacidad
@@ -137,7 +146,7 @@ class _MyHomeState extends State<MyHome> {
                   duration: const Duration(milliseconds: 800),
                   // Navega hasta la pantalla que muestra la respuesta al momento de terminar la animación
                   onEnd: seeAnswer,
-                  opacity: _animate? 0:0.5,
+                  opacity: _animate? 0.1:0.5,
                   // Widget transform para escalar al doble el botón de la bola 8
                   child: Transform.scale(
                     scale: _animate?2:1,
